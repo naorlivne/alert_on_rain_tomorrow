@@ -18,6 +18,7 @@ This project is designed with the following philosophy in mind, any feature\pull
 
 * Follow Linux philosophy and have each component do one thing & one thing only.
 * Reliability is more important then shiny new features.
+* No vendor\cloud lock-in, if it's only available in one cloud it will not be used.
 
 ## What you can help with
 
