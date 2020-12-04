@@ -1,4 +1,6 @@
 from unittest import TestCase, mock
+from alert_on_rain.alert_on_rain_tomorrow_runner import *
+
 import os
 
 
