@@ -2,9 +2,9 @@
 
 A simple job designed to run inside a cron wrapper of some sort (pick your poison as each orchestrator/cloud provider has it's own way of doing scheduled jobs nowadays) that will alert via telegram & email when it looks like it will rain tomorrow then exit (it's not long running as again it's designed to run inside a cron scheduler of some kind).
 
-Drone.io CI/CD unit tests & auto push status: [![Build Status](https://cloud.drone.io/api/badges/naorlivne/terraformize/status.svg)](https://cloud.drone.io/naorlivne/alert_on_rain_tommrrow)
+Drone.io CI/CD unit tests & auto push status: [![Build Status](https://cloud.drone.io/api/badges/naorlivne/alert_on_rain_tomorrow/status.svg)](https://cloud.drone.io/naorlivne/alert_on_rain_tommrrow)
 
-Code coverage: [![codecov](https://codecov.io/gh/naorlivne/parse_it/branch/master/graph/badge.svg)](https://codecov.io/gh/naorlivne/alert_on_rain_tommrrow)
+Code coverage: [![codecov](https://codecov.io/gh/naorlivne/alert_on_rain_tomorrow/branch/master/graph/badge.svg)](https://codecov.io/gh/naorlivne/alert_on_rain_tommrrow)
 
 # Running
 
