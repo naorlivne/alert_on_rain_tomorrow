@@ -42,8 +42,6 @@ steps:
 
 depends_on:
 - amd64_build
-- arm_build
-- arm64_build
 
 ---
 kind: pipeline
