@@ -15,6 +15,8 @@ class WeatherForecast:
             :param country_code: the full path of the terraform binary to use, will try to use the one at the path
             if not set
         """
+
+        # TODO below is a copy paste example that needs splitting up and work
         from pyowm.utils import timestamps
         from pyowm.owm import OWM
         owm = OWM('your-api-key')
@@ -27,21 +29,6 @@ class WeatherForecast:
 
     def rain_tomorrow(self, variables: Optional[dict] = None, parallelism: int = 10) -> Tuple[str, str, str]:
         """
-        Will run a terraform apply on a workspace & will pass all variables to the terraform apply as terraform
-        variables
 
-        Arguments:
-            :param variables: the variables to pass to the terraform apply command
-            :param parallelism: the number of parallel resource operations
-
-        Returns:
-            :return return_code: the return code of the terraform apply
-            :return stdout: the stdout stream of the terraform apply
-            :return stderr: the stderr stream of the terraform apply
         """
-        if variables is None:
-            variables = {}
-
-        return_code, stdout, stderr = self.tf.apply(no_color=IsFlagged, var=variables, skip_plan=True,
-                                                    parallelism=parallelism)
-        return return_code, stdout, stderr
+        pass
