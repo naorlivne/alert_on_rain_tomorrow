@@ -3,7 +3,8 @@ import os
 
 
 def init():
-    """Run the logic which will take a file & inject it with values of envvars used then create a
-    /tmp/injected_deployment.yaml that can be used by kubectl
+    """
+    Run the logic which will take the variables (OWM api key & location) no matter how they are provided and will alert
+    if it looks like it will rain there tomorrow
     """
     pass
