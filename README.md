@@ -16,9 +16,9 @@ alert_on_rain_tomorrow uses sane defaults but they can all be easily changed:
 
 | value                  | envvar                 | default value          | notes                                                                                                  |
 |------------------------|------------------------|------------------------|--------------------------------------------------------------------------------------------------------|
-|                        |                        |                        |                                                                                                        |
-|                        |                        |                        |                                                                                                        |
-
+|  owm_api_key           | OWM_API_KEY            |                        | You can get a free one at https://openweathermap.org/                                                  |
+|  city                  | CITY                   |                        | The city you want to be alerted should it rain tomorrow                                                |
+|  country_code          | COUNTRY_CODE           |                        | The 2 capital letters country code where the city is located at                                        |
 
 The easiest way to change a default value is to pass the envvar key\value to the docker container with the `-e` cli arg but if you want you can also create a configuration file with the settings you wish (in whatever of the standard format you desire) & place it in the /www/config folder inside the container.
 

@@ -7,28 +7,26 @@ class WeatherForecast:
 
     def __init__(self, api_key: str, city: str, country_code: str):
         """
-        Will create a terraform object, create a workspace & init the terraform directory
+        Will create a OWM object daily forecaster object
 
         Arguments:
-            :param api_key: the workspace terraform will be executed in
-            :param city: the full path of the folder to run the terraform in
-            :param country_code: the full path of the terraform binary to use, will try to use the one at the path
+            :param api_key: the OpenWeatherMap api key
+            :param city: the city where to get the prediction for, use https://openweathermap.org/find to locate yours
+            :param country_code: the 2 capital letters country code where the city is located at
             if not set
         """
 
-        # TODO below is a copy paste example that needs splitting up and work
-        from pyowm.utils import timestamps
-        from pyowm.owm import OWM
         owm = OWM('your-api-key')
-        mgr = owm.weather_manager()
-        three_h_forecaster = mgr.forecast_at_place('Berlin,DE', '3h')
+        self.mgr = owm.weather_manager()
+        self.daily_forecaster = self.mgr.forecast_at_place(city + "," + country_code, 'daily')
 
-        # Is it going to rain tomorrow?
-        tomorrow = timestamps.tomorrow()  # datetime object for tomorrow
-        three_h_forecaster.will_be_rainy_at(tomorrow)
-
-    def rain_tomorrow(self, variables: Optional[dict] = None, parallelism: int = 10) -> Tuple[str, str, str]:
+    def rain_tomorrow(self):
         """
+        Checks if it will rain tomorrow
+
+        Returns:
+            :return bool, True if it will be rainy, False otherwise
 
         """
-        pass
+        tomorrow = timestamps.tomorrow()
+        return self.daily_forecaster.will_be_rainy_at(tomorrow)
