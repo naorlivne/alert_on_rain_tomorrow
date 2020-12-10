@@ -16,11 +16,11 @@ class WeatherForecast:
             if not set
         """
 
-        owm = OWM('your-api-key')
+        owm = OWM(api_key)
         self.mgr = owm.weather_manager()
-        self.daily_forecaster = self.mgr.forecast_at_place(city + "," + country_code, 'daily')
+        self.three_hour_forecast = self.mgr.forecast_at_place(city + "," + country_code, '3h')
 
-    def rain_tomorrow(self):
+    def rain_tomorrow(self) -> bool:
         """
         Checks if it will rain tomorrow
 
@@ -29,4 +29,4 @@ class WeatherForecast:
 
         """
         tomorrow = timestamps.tomorrow()
-        return self.daily_forecaster.will_be_rainy_at(tomorrow)
+        return self.three_hour_forecast.will_be_rainy_at(tomorrow)

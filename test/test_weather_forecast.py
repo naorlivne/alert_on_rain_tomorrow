@@ -11,8 +11,9 @@ class BaseTests(TestCase):
 
     def test_weather_forecast_init(self):
         owm_object = WeatherForecast(owm_api_key, "Tel Aviv", "IL")
-        pass
+        self.assertEqual(owm_object.three_hour_forecast.forecast.interval, "3h")
 
     def test_weather_forecast_rain_tomorrow(self):
-        reply = "some_kind_of_test_here"
-        self.assertIsNone(reply)
+        owm_object = WeatherForecast(owm_api_key, "Tel Aviv", "IL")
+        rain_tomorrow = owm_object.rain_tomorrow()
+        self.assertIsInstance(rain_tomorrow, bool)
