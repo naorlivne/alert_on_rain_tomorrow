@@ -3,7 +3,7 @@ from alert_on_rain.functions.weather_forecast.forecast import *
 from parse_it import ParseIt
 
 
-parser = ParseIt(recurse=False)
+parser = ParseIt(recurse=False, config_type_priority=["envvars"])
 owm_api_key = parser.read_configuration_variable("owm_api_key", required=True)
 
 
