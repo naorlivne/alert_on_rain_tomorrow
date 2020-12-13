@@ -1,6 +1,5 @@
 from pyowm.utils import timestamps
 from pyowm.owm import OWM
-from typing import Tuple, Optional
 
 
 class WeatherForecast:
