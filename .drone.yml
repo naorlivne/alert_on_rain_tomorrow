@@ -17,8 +17,8 @@ steps:
     TEST_FILES_LOCATION: test/test_files
     CODECOV_TOKEN:
       from_secret: codecov_token
-    OWN_API_KEY:
-      from_secret: OWN_API_KEY
+    OWM_API_KEY:
+      from_secret: OWM_API_KEY
 
 - name: docker_build_version
   image: plugins/docker
@@ -57,8 +57,8 @@ steps:
     TEST_FILES_LOCATION: test/test_files
     CODECOV_TOKEN:
       from_secret: codecov_token
-    OWN_API_KEY:
-      from_secret: OWN_API_KEY
+    OWM_API_KEY:
+      from_secret: OWM_API_KEY
 
 - name: docker_build_version
   image: plugins/docker
@@ -97,8 +97,8 @@ steps:
     TEST_FILES_LOCATION: test/test_files
     CODECOV_TOKEN:
       from_secret: codecov_token
-    OWN_API_KEY:
-      from_secret: OWN_API_KEY
+    OWM_API_KEY:
+      from_secret: OWM_API_KEY
 
 - name: docker_build_version
   image: plugins/docker
