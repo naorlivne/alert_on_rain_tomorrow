@@ -4,7 +4,7 @@ A simple job designed to run inside a cron wrapper of some sort (pick your poiso
 
 Drone.io CI/CD unit tests & auto push status: [![Build Status](https://cloud.drone.io/api/badges/naorlivne/alert_on_rain_tomorrow/status.svg)](https://cloud.drone.io/naorlivne/alert_on_rain_tommrrow)
 
-Code coverage: [![codecov](https://codecov.io/gh/naorlivne/alert_on_rain_tomorrow/branch/master/graph/badge.svg)](https://codecov.io/gh/naorlivne/alert_on_rain_tommrrow)
+Code coverage: [![codecov](https://codecov.io/gh/naorlivne/alert_on_rain_tomorrow/branch/master/graph/badge.svg)](https://codecov.io/gh/naorlivne/alert_on_rain_tomorrow)
 
 # Running
 
