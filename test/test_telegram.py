@@ -22,4 +22,4 @@ class BaseTests(TestCase):
                                                       '"text":"test api is working"}}')
             telegram_object = Telegram("my_totally_real_telegram_token")
             reply = telegram_object.send_alert("123")
-            self.assertTrue(reply)
+            self.assertTrue(reply.json['from']['is_bot'])
