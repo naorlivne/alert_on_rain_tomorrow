@@ -19,6 +19,8 @@ class Telegram:
 
         Arguments:
             :param chat_id: the id of the telegram chat to send alerts to
+        Returns:
+
         """
 
         message = """Subject: Rain tomorrow
@@ -26,5 +28,5 @@ class Telegram:
             This message is to alert you it looks like it will rain tomorrow.
             """
 
-        self.bot.send_message(chat_id, message)
+        return self.bot.send_message(chat_id, message)
 
