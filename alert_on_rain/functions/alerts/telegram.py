@@ -29,4 +29,3 @@ class Telegram:
             """
 
         return self.bot.send_message(chat_id, message)
-
