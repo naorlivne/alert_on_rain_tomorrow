@@ -12,7 +12,7 @@ Code coverage: [![codecov](https://codecov.io/gh/naorlivne/alert_on_rain_tomorro
 
 # Configuration options
 
-alert_on_rain_tomorrow uses sane defaults but they can all be easily changed:
+alert_on_rain_tomorrow uses sane defaults, but they can all be easily changed:
 
 | value                  | envvar                 | default value          | notes                                                                                                  |
 |------------------------|------------------------|------------------------|--------------------------------------------------------------------------------------------------------|
