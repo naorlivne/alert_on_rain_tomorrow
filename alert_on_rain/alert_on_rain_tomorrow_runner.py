@@ -25,5 +25,9 @@ def init():
     telegram_object = Telegram(telegram_token)
 
     if owm_object.rain_tomorrow() is True:
+        print("It will rain tomorrow, sending alert")
         telegram_object.send_alert(chat_id)
         email_alert(smtp_server, sender_email, receiver_email, email_password, email_port)
+        print("rain alert sent")
+    else:
+        print("It will not rain tomorrow")
