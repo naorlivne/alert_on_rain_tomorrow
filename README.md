@@ -1,6 +1,6 @@
     # alert_on_rain_tomorrow
 
-A simple job designed to run inside a cron wrapper of some sort (pick your poison as each orchestrator/cloud provider has it's own way of doing scheduled jobs nowadays) that will alert via telegram & email when it looks like it will rain tomorrow then exit (it's not long running as again it's designed to run inside a cron scheduler of some kind).
+A simple job designed to run inside a cron wrapper of some sort (pick your poison as each orchestrator/cloud provider has its own way of doing scheduled jobs nowadays) that will alert via telegram & email when it looks like it will rain tomorrow then exit (it's not long-running as again it's designed to run inside a cron scheduler of some kind).
 
 Drone.io CI/CD unit tests & auto push status: [![Build Status](https://cloud.drone.io/api/badges/naorlivne/alert_on_rain_tomorrow/status.svg)](https://cloud.drone.io/naorlivne/alert_on_rain_tommrrow)
 
@@ -8,7 +8,11 @@ Code coverage: [![codecov](https://codecov.io/gh/naorlivne/alert_on_rain_tomorro
 
 # Running
 
+The container will run with the following command, check for rain tomorrow and alert if it looks like a rainy day then exit, It's designed to run under some cron scheduler (k8s, metronome/mesos or linux OS cron), below is the example command needed to run the container one off
 
+```shell
+docker run -e OWM_API_KEY="my_owm_token" -e CITY="Tel Aviv" -e COUNTRY_CODE="IL" -e SMTP_SERVER="smtp.gmail.com" -e SENDER_EMAIL="mymail@example.com" -e RECEIVER_EMAIL="mymail@example.com" -e EMAIL_PASSWORD="pass" -e EMAIL_PORT="587" -e TELEGRAM_TOKEN="my_token" -e CHAT_ID="123" naorlivne/alert_on_rain_tomorrow
+```
 
 # Configuration options
 
