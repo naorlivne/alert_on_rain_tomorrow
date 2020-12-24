@@ -14,4 +14,4 @@ RUN chmod +x /alert_on_rain_tomorrow/alert_on_rain_tomorrow.py
 
 # and running it
 WORKDIR /alert_on_rain_tomorrow
-CMD ["/alert_on_rain_tomorrow/alert_on_rain_tomorrow.py"]
+CMD ["python", "/alert_on_rain_tomorrow/alert_on_rain_tomorrow.py"]
