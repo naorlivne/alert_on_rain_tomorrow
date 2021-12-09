@@ -29,3 +29,14 @@ class WeatherForecast:
         """
         tomorrow = timestamps.tomorrow()
         return self.three_hour_forecast.will_be_rainy_at(tomorrow)
+
+    def storm_tomorrow(self) -> bool:
+        """
+        Checks if it will be stormy tomorrow
+
+        Returns:
+            :return bool, True if stormy, False otherwise
+
+        """
+        tomorrow = timestamps.tomorrow()
+        return self.three_hour_forecast.will_be_stormy_at(tomorrow)

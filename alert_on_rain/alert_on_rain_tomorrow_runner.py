@@ -26,8 +26,13 @@ def init():
 
     if owm_object.rain_tomorrow() is True:
         print("It will rain tomorrow, sending alert")
-        telegram_object.send_alert(chat_id)
-        email_alert(smtp_server, sender_email, receiver_email, email_password, email_port)
+        telegram_object.send_alert(chat_id, "rain")
+        email_alert(smtp_server, sender_email, receiver_email, email_password, "rain", email_port)
         print("rain alert sent")
+    elif owm_object.storm_tomorrow() is True:
+        print("It will be a storm tomorrow, sending alert")
+        telegram_object.send_alert(chat_id, "storm")
+        email_alert(smtp_server, sender_email, receiver_email, email_password, "storm", email_port)
+        print("storm alert sent")
     else:
-        print("It will not rain tomorrow")
+        print("It will not rain or be stormy tomorrow")

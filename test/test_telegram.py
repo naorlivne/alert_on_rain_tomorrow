@@ -13,7 +13,7 @@ class BaseTests(TestCase):
         with requests_mock.Mocker() as request_mocker:
             request_mocker.post('https://api.telegram.org/botmy_totally_real_telegram_token/sendMessage?chat_id=123&'
                                 'text=Subject%3A+Rain+tomorrow%0A%0A++++++++++++This+message+is+to+alert+you+it+looks'
-                                '+like+it+will+rain+tomorrow.%0A++++++++++++',
+                                '+like+it+will+be+rainy+tomorrow.%0A++++++++++++',
                                 status_code=200, text='{"ok":true,"result":{"message_id":85,"from":{"id":123,'
                                                       '"is_bot":true,"first_name":"blabla",'
                                                       '"username":"blablason"},"chat":{'
@@ -21,5 +21,5 @@ class BaseTests(TestCase):
                                                       '"username":"Naorlivne","type":"private"},"date":123,'
                                                       '"text":"test api is working"}}')
             telegram_object = Telegram("my_totally_real_telegram_token")
-            reply = telegram_object.send_alert("123")
+            reply = telegram_object.send_alert("123", "rain")
             self.assertTrue(reply.json['from']['is_bot'])

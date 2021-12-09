@@ -13,19 +13,20 @@ class Telegram:
 
         self.bot = telebot.TeleBot(telegram_token)
 
-    def send_alert(self, chat_id):
+    def send_alert(self, chat_id, alert_type):
         """
         Will send an alert about the rain via telegram
 
         Arguments:
             :param chat_id: the id of the telegram chat to send alerts to
+            :param alert_type: the type of alert to send, can be 'rain' or 'storm'
         Returns:
 
         """
 
-        message = """Subject: Rain tomorrow
+        message = """Subject: {alert_type_capitalized} tomorrow
 
-            This message is to alert you it looks like it will rain tomorrow.
-            """
+            This message is to alert you it looks like it will be {alert_type}y tomorrow.
+            """.format(alert_type_capitalized=alert_type.capitalize(), alert_type=alert_type)
 
         return self.bot.send_message(chat_id, message)

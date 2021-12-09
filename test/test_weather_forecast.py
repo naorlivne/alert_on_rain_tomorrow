@@ -17,3 +17,9 @@ class BaseTests(TestCase):
         owm_object = WeatherForecast(owm_api_key, "Tel Aviv", "IL")
         rain_tomorrow = owm_object.rain_tomorrow()
         self.assertIsInstance(rain_tomorrow, bool)
+
+    def test_will_be_stormy_tomorrow(self):
+        owm_object = WeatherForecast(owm_api_key, "Tel Aviv", "IL")
+        storm_tomorrow = owm_object.storm_tomorrow()
+        self.assertIsInstance(storm_tomorrow, bool)
+
