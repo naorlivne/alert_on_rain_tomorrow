@@ -24,7 +24,12 @@ def init():
     owm_object = WeatherForecast(owm_api_key, city, country_code)
     telegram_object = Telegram(telegram_token)
 
-    if owm_object.rain_tomorrow() is True:
+    if owm_object.rain_tomorrow() is True and owm_object.storm_tomorrow() is True:
+        print("It will be rainy and stormy tomorrow, sending alert")
+        telegram_object.send_alert(chat_id, "stormy and rain")
+        email_alert(smtp_server, sender_email, receiver_email, email_password, "stormy and rain", email_port)
+        print("rain alert sent")
+    elif owm_object.rain_tomorrow() is True:
         print("It will rain tomorrow, sending alert")
         telegram_object.send_alert(chat_id, "rain")
         email_alert(smtp_server, sender_email, receiver_email, email_password, "rain", email_port)
