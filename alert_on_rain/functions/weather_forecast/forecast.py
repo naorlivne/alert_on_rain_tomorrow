@@ -1,5 +1,6 @@
 from pyowm.utils import timestamps
 from pyowm.owm import OWM
+from cachetools import cached, TTLCache
 
 
 class WeatherForecast:
@@ -19,6 +20,7 @@ class WeatherForecast:
         self.mgr = owm.weather_manager()
         self.three_hour_forecast = self.mgr.forecast_at_place(city + "," + country_code, '3h')
 
+    @cached(cache=TTLCache(maxsize=32, ttl=60))
     def rain_tomorrow(self) -> bool:
         """
         Checks if it will rain tomorrow
@@ -30,6 +32,7 @@ class WeatherForecast:
         tomorrow = timestamps.tomorrow()
         return self.three_hour_forecast.will_be_rainy_at(tomorrow)
 
+    @cached(cache=TTLCache(maxsize=32, ttl=60))
     def storm_tomorrow(self) -> bool:
         """
         Checks if it will be stormy tomorrow
