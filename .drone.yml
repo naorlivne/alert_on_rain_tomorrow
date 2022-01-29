@@ -209,6 +209,38 @@ depends_on:
 ---
 kind: pipeline
 type: docker
+name: publish_to_heroku
+
+trigger:
+  event:
+  - push
+  branch:
+  - master
+
+steps:
+- name: drone_heroku_deploy_container
+  image: naorlivne/drone-heroku-deploy-container
+  settings:
+    heroku_api_key:
+      from_secret: heroku_api_key
+    heroku_process_type: web
+    heroku_app_name: heroku_api_key
+- name: drone_heroku_deploy_container
+  image: naorlivne/drone-heroku-deploy-container
+  settings:
+    heroku_api_key:
+      from_secret: heroku_api_key
+    heroku_process_type: worker
+    heroku_app_name: heroku_api_key
+
+depends_on:
+- amd64_build
+- arm64_build
+- arm_build
+
+---
+kind: pipeline
+type: docker
 name: notify
 
 steps:
@@ -229,3 +261,4 @@ depends_on:
 - publish_docker_manifest
 - publish_docker_manifest_build_number
 - publish_changelog
+- publish_to_heroku
