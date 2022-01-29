@@ -224,7 +224,7 @@ steps:
     heroku_api_key:
       from_secret: heroku_api_key
     heroku_process_type: web
-    heroku_app_name: heroku_api_key
+    heroku_app_name: alert-on-rain-tomorrow
 - name: drone_heroku_deploy_container_worker
   image: naorlivne/drone-heroku-deploy-container
   settings:
