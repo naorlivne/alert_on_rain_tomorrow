@@ -227,7 +227,6 @@ steps:
       - master
   settings:
     username: naorlivne@gmail.com
-    email: naorlivne@gmail.com
     password:
       from_secret: heroku_api_key
     registry: registry.heroku.com
@@ -254,7 +253,6 @@ steps:
       - master
   settings:
     username: naorlivne@gmail.com
-    email: naorlivne@gmail.com
     password:
       from_secret: heroku_api_key
     registry: registry.heroku.com
