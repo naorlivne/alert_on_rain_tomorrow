@@ -231,7 +231,7 @@ steps:
     heroku_api_key:
       from_secret: heroku_api_key
     heroku_process_type: worker
-    heroku_app_name: heroku_api_key
+    heroku_app_name: alert-on-rain-tomorrow
 
 depends_on:
 - amd64_build
