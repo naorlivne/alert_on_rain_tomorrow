@@ -218,14 +218,14 @@ trigger:
   - master
 
 steps:
-- name: drone_heroku_deploy_container
+- name: drone_heroku_deploy_container_web
   image: naorlivne/drone-heroku-deploy-container
   settings:
     heroku_api_key:
       from_secret: heroku_api_key
     heroku_process_type: web
     heroku_app_name: heroku_api_key
-- name: drone_heroku_deploy_container
+- name: drone_heroku_deploy_container_worker
   image: naorlivne/drone-heroku-deploy-container
   settings:
     heroku_api_key:
