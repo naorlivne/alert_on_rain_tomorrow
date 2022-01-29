@@ -232,6 +232,7 @@ steps:
       from_secret: heroku_api_key
     registry: registry.heroku.com
     repo: registry.heroku.com/alert-on-rain-tomorrow/web
+    force_tag: true
 - name: drone_heroku_release_container_web
   image: naorlivne/drone-heroku-deploy-container
   when:
@@ -258,6 +259,7 @@ steps:
       from_secret: heroku_api_key
     registry: registry.heroku.com
     repo: registry.heroku.com/alert-on-rain-tomorrow/web
+    force_tag: true
 - name: drone_heroku_release_container_worker
   image: naorlivne/drone-heroku-deploy-container
   when:
