@@ -256,7 +256,7 @@ steps:
     password:
       from_secret: heroku_api_key
     registry: registry.heroku.com
-    repo: registry.heroku.com/alert-on-rain-tomorrow/web
+    repo: registry.heroku.com/alert-on-rain-tomorrow/worker
     force_tag: true
 - name: drone_heroku_release_container_worker
   image: naorlivne/drone-heroku-deploy-container
