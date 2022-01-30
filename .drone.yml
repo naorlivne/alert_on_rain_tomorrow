@@ -276,6 +276,9 @@ depends_on:
 - arm64_build
 - arm_build
 
+image_pull_secrets:
+- dockerconfig
+
 ---
 kind: pipeline
 type: docker
