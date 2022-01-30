@@ -37,6 +37,9 @@ steps:
       - linux-amd64
       - linux-amd64-v${DRONE_BUILD_NUMBER}
 
+image_pull_secrets:
+- dockerconfig
+
 ---
 kind: pipeline
 type: docker
@@ -77,6 +80,9 @@ steps:
       - linux-arm64
       - linux-arm64-v${DRONE_BUILD_NUMBER}
 
+image_pull_secrets:
+- dockerconfig
+
 ---
 kind: pipeline
 type: docker
@@ -116,6 +122,9 @@ steps:
     tags:
       - linux-arm
       - linux-arm-v${DRONE_BUILD_NUMBER}
+
+image_pull_secrets:
+- dockerconfig
 
 ---
 kind: pipeline
@@ -243,32 +252,6 @@ steps:
     heroku_api_key:
       from_secret: heroku_api_key
     heroku_process_type: web
-    heroku_app_name: alert-on-rain-tomorrow
-- name: drone_heroku_build_container_worker
-  image: plugins/docker
-  when:
-    event:
-      - push
-    branch:
-      - master
-  settings:
-    username: naorlivne@gmail.com
-    password:
-      from_secret: heroku_api_key
-    registry: registry.heroku.com
-    repo: registry.heroku.com/alert-on-rain-tomorrow/worker
-    force_tag: true
-- name: drone_heroku_release_container_worker
-  image: naorlivne/drone-heroku-deploy-container
-  when:
-    event:
-      - push
-    branch:
-      - master
-  settings:
-    heroku_api_key:
-      from_secret: heroku_api_key
-    heroku_process_type: worker
     heroku_app_name: alert-on-rain-tomorrow
 
 depends_on:
