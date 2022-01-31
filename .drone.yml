@@ -235,6 +235,8 @@ steps:
     branch:
       - master
   settings:
+    config:
+      from_secret: dockerconfig
     username: naorlivne@gmail.com
     password:
       from_secret: heroku_api_key
