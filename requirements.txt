@@ -5,7 +5,7 @@ charset-normalizer==2.0.11
 codecov==2.1.12
 configobj==5.0.6
 coverage==6.3
-dpath==2.0.5
+dpath==2.0.6
 geojson==2.5.0
 idna==3.3
 parse-it==2022.1.29.9.59
