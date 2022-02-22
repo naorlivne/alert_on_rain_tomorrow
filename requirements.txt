@@ -8,7 +8,7 @@ coverage==6.3.2
 dpath==2.0.6
 geojson==2.5.0
 idna==3.3
-parse-it==2022.1.29.9.59
+parse-it==2022.2.2.15.29
 pyhcl==0.4.4
 pyowm==3.3.0
 PySocks==1.7.1
