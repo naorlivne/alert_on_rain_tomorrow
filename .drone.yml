@@ -170,54 +170,6 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: publish_to_heroku
-
-trigger:
-  event:
-  - push
-  branch:
-  - master
-
-steps:
-- name: drone_heroku_build_container_web
-  image: plugins/docker
-  when:
-    event:
-      - push
-    branch:
-      - master
-  settings:
-    config:
-      from_secret: dockerconfig
-    username: naorlivne@gmail.com
-    password:
-      from_secret: heroku_api_key
-    registry: registry.heroku.com
-    repo: registry.heroku.com/alert-on-rain-tomorrow/web
-    force_tag: true
-- name: drone_heroku_release_container_web
-  image: naorlivne/drone-heroku-deploy-container
-  when:
-    event:
-      - push
-    branch:
-      - master
-  settings:
-    heroku_api_key:
-      from_secret: heroku_api_key
-    heroku_process_type: web
-    heroku_app_name: alert-on-rain-tomorrow
-
-depends_on:
-- amd64_build
-- arm64_build
-
-image_pull_secrets:
-- dockerconfig
-
----
-kind: pipeline
-type: docker
 name: notify
 
 steps:
@@ -238,4 +190,3 @@ depends_on:
 - publish_docker_manifest
 - publish_docker_manifest_build_number
 - publish_changelog
-- publish_to_heroku
