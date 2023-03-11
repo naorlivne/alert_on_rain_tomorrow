@@ -30,6 +30,8 @@ jobs:
         run: |
           coverage run -m unittest
           codecov  -t  ${{ secrets.CODECOV_TOKEN }}
+        env:
+          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
 
   build_and_publish_job:
 

@@ -29,3 +29,5 @@ jobs:
       - name: Test
         run: |
           coverage run -m unittest
+        env:
+          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
