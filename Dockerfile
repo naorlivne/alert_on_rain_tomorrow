@@ -1,5 +1,5 @@
 # it's offical so i'm using it + alpine so damn small
-FROM python:3.9.5-alpine3.12
+FROM python:3.11.4-alpine3.18
 
 # set python to be unbuffered
 ENV PYTHONUNBUFFERED=1
