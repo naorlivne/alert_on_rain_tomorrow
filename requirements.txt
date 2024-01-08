@@ -6,7 +6,7 @@ configobj==5.0.8
 coverage==7.3.2
 dpath==2.1.6
 geojson==2.5.0
-idna==3.4
+idna==3.6
 parse-it==2023.10.5.16.31
 pyhcl==0.4.5
 pyowm==3.3.0
