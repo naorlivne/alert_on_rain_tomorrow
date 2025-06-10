@@ -14,7 +14,7 @@ PySocks==1.7.1
 pyTelegramBotAPI==4.26.0
 python-dotenv==1.0.1
 PyYAML==6.0.2
-requests==2.32.3
+requests==2.32.4
 requests-mock==1.12.1
 six==1.17.0
 toml==0.10.2
