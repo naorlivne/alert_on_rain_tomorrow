@@ -3,7 +3,7 @@ cachetools==6.2.0
 chardet==5.2.0
 charset-normalizer==3.4.3
 configobj==5.0.9
-coverage==7.10.6
+coverage==7.10.7
 dpath==2.2.0
 geojson==2.5.0
 idna==3.10
